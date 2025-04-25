@@ -1,0 +1,20 @@
+#include <stdio.h>
+
+int main() {
+    int i, j, n;
+
+    // Loop para ler 20 valores de n
+    for(i = 0; i < 20; i++) {
+        printf("Digite o valor de n (para a tabuada %d): ", i+1);
+        scanf("%d", &n);
+
+        // Imprimindo a tabuada de 1 até n
+        printf("Tabuada de %d:\n", n);
+        for(j = 1; j <= n; j++) {
+            printf("%d x %d = %d\n", j, n, j * n);
+        }
+        printf("\n");  // Espaço entre as tabuadas
+    }
+
+    return 0;
+}

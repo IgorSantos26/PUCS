@@ -1,0 +1,34 @@
+#include <stdio.h>
+
+int main() {
+    int numero, soma = 0, contador = 0;
+    double media;
+
+    // Leitura dos números
+    while (1) {
+        printf("Digite um número (ou 0 para encerrar): ");
+        scanf("%d", &numero);
+
+        // Condição para encerrar o programa
+        if (numero == 0) {
+            break;
+        }
+
+        // Verifica se o número é par
+        if (numero % 2 == 0) {
+            soma += numero;    // Soma dos números pares
+            contador++;        // Conta quantos números pares foram digitados
+        }
+    }
+
+    // Verifica se algum número par foi inserido
+    if (contador > 0) {
+        // Cálculo da média dos números pares
+        media = (double)soma / contador;
+        printf("Média dos números pares: %.2f\n", media);
+    } else {
+        printf("Nenhum número par foi inserido.\n");
+    }
+
+    return 0;
+}

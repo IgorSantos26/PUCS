@@ -1,0 +1,50 @@
+#include <stdio.h>
+
+int main() {
+    double salario, somaSalarios = 0.0, maiorSalario = -1.0, somaFilhos = 0.0;
+    int numeroFilhos, contador = 0, pessoasSalarioBaixo = 0;
+
+    // Leitura dos dados enquanto o salário não for negativo
+    while (1) {
+        // Leitura do salário
+        printf("Digite o salário (ou um valor negativo para encerrar): ");
+        scanf("%lf", &salario);
+
+        // Condição de término
+        if (salario < 0) {
+            break;
+        }
+
+        // Leitura do número de filhos
+        printf("Digite o número de filhos: ");
+        scanf("%d", &numeroFilhos);
+
+        // Atualização das variáveis
+        somaSalarios += salario;
+        somaFilhos += numeroFilhos;
+        contador++;
+
+        // Verifica se o salário é o maior
+        if (salario > maiorSalario) {
+            maiorSalario = salario;
+        }
+
+        // Conta quantas pessoas têm salário até R$100,00
+        if (salario <= 100.0) {
+            pessoasSalarioBaixo++;
+        }
+    }
+
+    // Verificação se alguma pessoa foi registrada
+    if (contador > 0) {
+        // Cálculo e exibição dos resultados
+        printf("\nMédia do salário da população: R$ %.2f\n", somaSalarios / contador);
+        printf("Média do número de filhos: %.2f\n", somaFilhos / contador);
+        printf("Maior salário: R$ %.2f\n", maiorSalario);
+        printf("Percentual de pessoas com salário até R$100,00: %.2f%%\n", (pessoasSalarioBaixo * 100.0) / contador);
+    } else {
+        printf("Nenhum dado foi informado.\n");
+    }
+
+    return 0;
+}

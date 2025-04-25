@@ -1,0 +1,27 @@
+#include <stdio.h>
+
+int main() {
+    int n, a1, r, i;
+    int soma = 0;
+
+    // Leitura dos dados
+    printf("Digite o número de termos (n): ");
+    scanf("%d", &n);
+    printf("Digite o primeiro termo (a1): ");
+    scanf("%d", &a1);
+    printf("Digite a razão (r): ");
+    scanf("%d", &r);
+
+    // Calculando e imprimindo os n termos da progressão aritmética
+    printf("Os %d termos da progressão aritmética são:\n", n);
+    for(i = 0; i < n; i++) {
+        int termo = a1 + i * r;  // Fórmula do n-ésimo termo da PA
+        printf("%d ", termo);
+        soma += termo;  // Soma dos termos
+    }
+
+    // Imprimindo a soma dos termos
+    printf("\nA soma dos termos é: %d\n", soma);
+
+    return 0;
+}

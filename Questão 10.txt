@@ -1,0 +1,53 @@
+#include <stdio.h>
+
+int main() {
+    int codigo;
+    double nota1, nota2, nota3, maiorNota, media;
+
+    // Laço para repetir a operação até o código ser negativo
+    while (1) {
+        // Leitura do código do aluno
+        printf("Digite o código do aluno (negativo para encerrar): ");
+        scanf("%d", &codigo);
+
+        // Condição de término: código negativo
+        if (codigo < 0) {
+            break;
+        }
+
+        // Leitura das 3 notas do aluno
+        printf("Digite a primeira nota: ");
+        scanf("%lf", &nota1);
+        printf("Digite a segunda nota: ");
+        scanf("%lf", &nota2);
+        printf("Digite a terceira nota: ");
+        scanf("%lf", &nota3);
+
+        // Identificando a maior nota
+        maiorNota = nota1;
+        if (nota2 > maiorNota) {
+            maiorNota = nota2;
+        }
+        if (nota3 > maiorNota) {
+            maiorNota = nota3;
+        }
+
+        // Calculando a média ponderada
+        media = (maiorNota * 4 + (nota1 + nota2 + nota3 - maiorNota) * 3) / 10.0;
+
+        // Exibindo os resultados
+        printf("Código do aluno: %d\n", codigo);
+        printf("Notas: %.2f, %.2f, %.2f\n", nota1, nota2, nota3);
+        printf("Média ponderada: %.2f\n", media);
+
+        // Verificando se o aluno foi aprovado ou reprovado
+        if (media >= 5.0) {
+            printf("APROVADO\n\n");
+        } else {
+            printf("REPROVADO\n\n");
+        }
+    }
+
+    printf("Programa encerrado.\n");
+    return 0;
+}

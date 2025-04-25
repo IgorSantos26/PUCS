@@ -1,0 +1,36 @@
+#include <stdio.h>
+
+int main() {
+    int valor, maior, menor;
+
+    // Inicializando o maior e o menor valor com valores arbitrários
+    // para garantir que qualquer valor digitado seja maior ou menor.
+    printf("Digite 50 valores:\n");
+
+    // Lê o primeiro valor e inicializa as variáveis
+    printf("Digite o 1º valor: ");
+    scanf("%d", &valor);
+    maior = menor = valor;
+
+    // Lê os próximos 49 valores e verifica se são maior ou menor
+    for (int i = 2; i <= 50; i++) {
+        printf("Digite o %dº valor: ", i);
+        scanf("%d", &valor);
+
+        // Verifica se o valor é o maior
+        if (valor > maior) {
+            maior = valor;
+        }
+
+        // Verifica se o valor é o menor
+        if (valor < menor) {
+            menor = valor;
+        }
+    }
+
+    // Exibe o maior e o menor valor
+    printf("\nO maior valor digitado foi: %d\n", maior);
+    printf("O menor valor digitado foi: %d\n", menor);
+
+    return 0;
+}
