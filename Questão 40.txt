@@ -1,0 +1,40 @@
+#include <stdio.h>
+
+// Função para calcular o fatorial de m
+unsigned long long fatorial(int m) {
+    unsigned long long fat = 1;
+    for (int i = 1; i <= m; i++) {
+        fat *= i;
+    }
+    return fat;
+}
+
+// Função para calcular o somatório de 1 até m
+int somatorio(int m) {
+    return m * (m + 1) / 2;
+}
+
+int main() {
+    int n, m;
+
+    printf("Digite a quantidade de valores a serem lidos (n): ");
+    scanf("%d", &n);
+
+    printf("\n%-10s | %-15s | %s\n", "Valor m", "Somatório (1..m)", "Fatorial de m");
+    printf("-----------|------------------|----------------------\n");
+
+    for (int i = 1; i <= n; i++) {
+        printf("Digite o valor %d (inteiro e positivo): ", i);
+        scanf("%d", &m);
+
+        if (m <= 0) {
+            printf("Valor inválido. Deve ser inteiro e positivo.\n");
+            i--; // Repete a iteração
+            continue;
+        }
+
+        printf("%-10d | %-15d | %llu\n", m, somatorio(m), fatorial(m));
+    }
+
+    return 0;
+}

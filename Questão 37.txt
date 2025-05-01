@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    float X;
+    int i;
+
+    printf("Digite o valor de X: ");
+    scanf("%f", &X);
+
+    if (X == 0) {
+        printf("Divisão por zero não é permitida.\n");
+        return 1;
+    }
+
+    printf("\n20 primeiros termos da série:\n");
+    for (i = 1; i <= 20; i++) {
+        float termo = 1.0 / pow(X, i);
+        printf("1 / %.2f^%d = %.6f\n", X, i, termo);
+    }
+
+    return 0;
+}
